@@ -18,6 +18,11 @@ class punto{
         $this-> positionx += $positionx;
         $this-> positiony += $positiony;
     }
+
+    public function moveposition(){
+        $movex
+        $movey
+    }
         
     public function toString(){
         return $this->getPunto();
