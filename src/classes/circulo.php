@@ -18,7 +18,12 @@ class circulo extends poligono{
     }
 
     public function radio(){
-        
+        return diameter()/2;
+    }
+
+    public function diameter(){
+        $diametro = createPunto();
+        return $this->$diametro -> calcularDistancia();
     }
 
 }
