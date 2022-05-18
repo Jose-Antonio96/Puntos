@@ -20,8 +20,8 @@ class cuadrado extends poligono{
         return lado()^2;
     }
 
-    public function lado(){
-        $lado = createPunto();
+    public function lado($A, $B){
+        $lado = createPunto($A, $B);
         return $this-> $lado = calcularDistancia();
     }
 

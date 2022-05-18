@@ -21,13 +21,13 @@ class rectangulo extends poligono{
         return base() * altura();
     }
 
-    public function base(){
-        $base = createPunto();
+    public function base($B, $C){
+        $base = createPunto($B, $C);
         return $this-> $base = calcularDistancia();
     }
 
-    public function altura(){
-        $altura = createPunto();
+    public function altura($A, $D){
+        $altura = createPunto($A, $D);
         return $this->$altura = calcularDistancia(); 
     }
 }

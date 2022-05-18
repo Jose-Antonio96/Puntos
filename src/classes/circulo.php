@@ -21,8 +21,8 @@ class circulo extends poligono{
         return diameter()/2;
     }
 
-    public function diameter(){
-        $diametro = createPunto();
+    public function diameter($A, $B){
+        $diametro = createPunto($A, $B);
         return $this->$diametro -> calcularDistancia();
     }
 
