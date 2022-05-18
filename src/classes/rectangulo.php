@@ -18,13 +18,17 @@ class rectangulo extends poligono{
 
     public function calcularArea()
     {
-        return 1/2 * $this->basealturacalcular();
+        return base() * altura();
     }
 
-    public function basealturacalcular(){
-        $base = $this-> calcularDistancia();
-        $altura = $this-> calcularDistancia();
-        return $base * $altura;
+    public function base(){
+        $base = createPunto();
+        return $this-> $base = calcularDistancia();
+    }
+
+    public function altura(){
+        $altura = createPunto();
+        return $this->$altura = calcularDistancia(); 
     }
 }
 

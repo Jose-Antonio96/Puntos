@@ -16,9 +16,13 @@ class cuadrado extends poligono{
         $this-> D = $D;
     }
 
-    public function calcularArea()
-    {
-        return 1/2 * $this->basealturacalcular();
+    public function calcularArea(){
+        return lado()^2;
+    }
+
+    public function lado(){
+        $lado = createPunto();
+        return $this-> $lado = calcularDistancia();
     }
 
 }

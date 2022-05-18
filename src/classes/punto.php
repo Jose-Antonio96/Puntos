@@ -43,10 +43,12 @@ class punto{
         return $this->positiony;
     }  
 
-    public function copy(){
-        ArrayObject::exchangeArray — Intercambia el array por otro
-Descripción ¶
-public ArrayObject::exchangeArray(mixed $input): array
+    public function copy($positionx, $positiony, $newpositionx, $newpositiony){
+        $punto = createPunto($positionx, $positiony);
+        $newpunto = array(0 => $newpositionx, 1=> $newpositiony);
+        $resultado = array_replace($punto, $newpunto);
+        
+            return $resultado;
     }
 
     public function calcularDistancia(int $positionx, int $positiony, int $newpositionx, int $newpositiony){
@@ -55,7 +57,7 @@ public ArrayObject::exchangeArray(mixed $input): array
         $newpositiony = 0;
         $distancia = sqrt($positionx, $positiony) - sqrt($newpositionx, $newpositiony);
 
-        return $distancia;
+            return $distancia;
       }
 
 }
