@@ -10,7 +10,7 @@ class punto{
         $this-> positiony = $positiony;
     }
 
-    public function getPunto(int $positionx, int $positiony){
+    public function createPunto(int $positionx, int $positiony){
         return new punto($positionx, $positiony); 
     }
     //+= establece el valor de la variable a otro
@@ -33,25 +33,15 @@ class punto{
             return $newposicion;
         }
     
-        for($ix=0; $ix<11; $ix++){ //Lo de abajo
-            for($iy=0; $iy<11; $iy++){ //Queremos que nos de todas las tablas de multiplicar del 1 al 10
-                $array[$ix][$iy]=$ix*$iy; //Con los for anteriores,
-                                          // se va incrementando uno por uno cada multiplicación
-            }
-        }
-        return $array;
     }
         
-    public function toString(){
-        return $this->getPunto();
-    }
-
-    public function moveTo($positionx, $positiony){
-
-    }
 
     public function distanceTo(punto $punto){
 
+    }
+
+    public calculoDistancia(){
+        
     }
 
     public function copy(){
