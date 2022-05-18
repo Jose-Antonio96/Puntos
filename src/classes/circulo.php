@@ -14,7 +14,11 @@ class circulo extends poligono{
 
     public function calcularArea()
     {
-        return 1/2 * $this->basealturacalcular();
+        return pi() * radio()^2;
+    }
+
+    public function radio(){
+        
     }
 
 }
