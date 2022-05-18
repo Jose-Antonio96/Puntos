@@ -7,12 +7,12 @@
     },
     "autoload":{
         "psr-4":{ 
-            "ITEC\\PRESENCIAL\\DAW\\PROG\\examen\\": "src/classes/"
+            "ITEC\\PRESENCIAL\\DAW\\PROG\\puntos\\": "src/classes/"
         }
     },
     "autoload-dev": {
         "psr-4":{
-            "ITEC\\PRESENCIAL\\DAW\\PROG\\examen\\": "src/classes/"
+            "ITEC\\PRESENCIAL\\DAW\\PROG\\puntos\\": "src/classes/"
         }
     }
 }

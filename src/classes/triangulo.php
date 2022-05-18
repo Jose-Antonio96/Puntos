@@ -20,8 +20,8 @@ class triangulo extends poligono{
     }
 
     public function basealturacalcular(){
-        $base = $this-> calcularDistancia();
-        $altura = $this-> calcularDistancia();
+        $base = $this-> calcularDistancia() -> createPunto();
+        $altura = $this-> calcularDistancia() -> createPunto();
         return $base * $altura;
     }
 }
