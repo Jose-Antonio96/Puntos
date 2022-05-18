@@ -34,19 +34,30 @@ class punto{
         }
     
     }
-        
 
-    public function distanceTo(punto $punto){
-
+    public function getpositionx():int{
+        return $this->positionx;
     }
 
-    public calculoDistancia(){
-        
-    }
+    public function getpositiony():int{
+        return $this->positiony;
+    }  
 
     public function copy(){
-
+        ArrayObject::exchangeArray — Intercambia el array por otro
+Descripción ¶
+public ArrayObject::exchangeArray(mixed $input): array
     }
+
+    public function calcularDistancia(int $positionx, int $positiony, int $newpositionx, int $newpositiony){
+        $distancia=createPunto($positionx, $positiony);
+        $newpositionx = 0;
+        $newpositiony = 0;
+        $distancia = sqrt($positionx, $positiony) - sqrt($newpositionx, $newpositiony);
+
+        return $distancia;
+      }
+
 }
 
 ?>
