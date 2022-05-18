@@ -1,8 +1,7 @@
 <?php
-namespace ITEC\PRESENCIAL\DAW\PROG\puntos;
-use ITEC\PRESENCIAL\DAW\PROG\puntos\punto;
-use ITEC\PRESENCIAL\DAW\PROG\puntos\poligono;
-
+namespace ITEC\DAW\PROG\classes\punto;
+use ITEC\DAW\PROG\classes\punto\poligono;
+use ITEC\DAW\PROG\classes\punto\punto;
 class cuadrado extends poligono{
     private punto $A;
     private punto $B; 

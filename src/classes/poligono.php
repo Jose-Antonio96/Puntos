@@ -1,6 +1,5 @@
 <?php
-namespace ITEC\PRESENCIAL\DAW\PROG\puntos;
-use ITEC\PRESENCIAL\DAW\PROG\puntos\punto;
+namespace ITEC\DAW\PROG\classes\punto;
 class poligono{
 
     public function calcularArea(){

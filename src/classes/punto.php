@@ -1,5 +1,5 @@
 <?php
-namespace ITEC\PRESENCIAL\DAW\PROG\puntos;
+namespace ITEC\DAW\PROG\classes\punto;
 
 class punto{
     private int $positionx;
