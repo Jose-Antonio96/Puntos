@@ -14,19 +14,28 @@ class punto implements interfacepunto{
     static public function createPunto(int $positionx, int $positiony){
         return new punto($positionx, $positiony); 
     }
-    //+= para ir sumandole y asi dar una nueva posicion
-    public function moveposition(int $positionx, int $positiony){
-        $this-> positionx += $positionx;
-        $this-> positiony += $positiony;
+    //+= para ir sumandole y asi dar una nueva posicion. Mueve de forma absoluta
+    /**
+     * Undocumented function
+     * 
+     * @param array $dimension un array [x,y]
+     * @return void
+     */
+    public function moveposition(array $dimension){
+        $this-> positionx += $dimension[0];
+        $this-> positiony += $dimension[1];
     }
-
-    public function moveto($positionx, $positiony){
-        $this-> positionx = $positionx;
-        $this-> positiony = $positiony;
+    /**
+     * Undocumented function
+     * 
+     * @param array $dimension un array [x,y]
+     * @return void
+     */
+    public function moveto(array $dimension){
+        $this-> positionx = $dimension[0];
+        $this-> positiony = $dimension[1];
         }
-    public function copyto(interfacepunto $punto){
-
-    }   
+    //Mueve el punto de forma relativa  
 
     public function getpositionx():int{
         return $this->positionx;
@@ -36,23 +45,17 @@ class punto implements interfacepunto{
         return $this->positiony;
     }  
 
-    public function copy($positionx, $positiony, $newpositionx, $newpositiony){
-        $punto = createPunto($positionx, $positiony);
-        $newpunto = array(0 => $newpositionx, 1=> $newpositiony);
-        $resultado = array_replace($punto, $newpunto);
-        
-            return $resultado;
+    public function getPosition():array{
+        return [$this->positionx, $this->positiony];
     }
 
-    public function calcularDistancia(int $positionx, int $positiony, int $newpositionx, int $newpositiony){
-        $distancia=createPunto($positionx, $positiony);
-        $newpositionx = 0;
-        $newpositiony = 0;
-        $distancia = sqrt($positionx, $positiony) - sqrt($newpositionx, $newpositiony);
-
-            return $distancia;
-      }
-
+    public function moveToPoint(punto $punto){
+        [$positionx, $positiony] = $punto->getPosition(); 
+        //Destructuracion de arrays. Lo asignamos asi para que cada elemento vaya a una variable
+        //Esto significa que coloca cada variable en su posicion. De getPosition tenemos
+        //lo siguiente, [$this->positionx, $this->positiony], que se pondrian en [$positionx, $positiony]
+        $this->moveto($positionx, $positiony);
+    }
 }
 
 ?>
