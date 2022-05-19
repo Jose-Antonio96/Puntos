@@ -61,6 +61,51 @@ class punto implements interfacepunto{
         //lo siguiente, [$this->positionx, $this->positiony], que se pondrian en [$positionx, $positiony]
         $this->moveto($positionx, $positiony);
     }
+    /*
+    public function moveToPoint(punto $punto){
+        $this->moveto($punto->getPosition());
+    }
+    Alternativa simplificada a lo de arriba
+    */
+
+    public function getDistance(punto $punto):float{
+        [$puntopositionx, $puntopositiony] = $punto->getPosition();
+        $positionx = $this->getpositionx() - $puntopositionx;
+        $positiony = $this->getpositiony() - $puntopositiony;
+        return sqrt($positionx^2 + $positiony^2);
+    }
+
+    public function isUpper()
+
+    public function isLeft(punto $punto){
+        [$puntopositionx, $puntopositiony] = $punto->getPosition();
+        return $this->positionx < $puntopositionx;
+    }
+
+    public function isRight(punto $punto){
+        [$puntopositionx, $puntopositiony] = $punto->getPosition();
+        return $this->positionx > $puntopositionx;
+    }
+
+    public function isUpperLeft(punto $punto){
+        [$puntopositionx, $puntopositiony] = $punto->getPosition();
+        return $this->positionx > $puntopositionx && $this-> positiony > $puntopositiony;
+    }
+
+    public function isUpperRight(punto $punto){
+        [$puntopositionx, $puntopositiony] = $punto->getPosition();
+        return $this->positionx < $puntopositionx && $this-> positiony > $puntopositiony;
+    }
+
+    public function isBottomLeft(punto $punto){
+        [$puntopositionx, $puntopositiony] = $punto->getPosition();
+        return $this->positionx < $puntopositionx && $this-> positiony < $puntopositiony;
+    }
+
+    public function isBottomRight(punto $punto){
+        [$puntopositionx, $puntopositiony] = $punto->getPosition();
+        return $this->positionx > $puntopositionx && $this-> positiony < $puntopositiony;
+    }
 }
 
 ?>

@@ -6,5 +6,6 @@ interface interfacepunto{
     public function moveto(array $dimension);
     public function getPosition():array;
     public function moveToPoint(punto $punto);
+    public function getDistance(punto $punto):float;
 
 }
