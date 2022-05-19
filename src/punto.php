@@ -1,29 +1,32 @@
 <?php
-namespace ITEC\DAW\PROG\classes\punto;
+namespace ITEC\DAW\PROG\puntospoligono;
+use ITEC\DAW\PROG\puntospoligono\interfacepunto;
 
-class punto{
+class punto implements interfacepunto{
     private int $positionx;
     private int $positiony;
-
+    
     private function __construct(int $positionx, int $positiony){
         $this-> positionx = $positionx;
         $this-> positiony = $positiony;
     }
 
-    public function createPunto(int $positionx, int $positiony){
+    static public function createPunto(int $positionx, int $positiony){
         return new punto($positionx, $positiony); 
     }
-    //+= establece el valor de la variable a otro
-    public function newposition(int $positionx, int $positiony){
+    //+= para ir sumandole y asi dar una nueva posicion
+    public function moveposition(int $positionx, int $positiony){
         $this-> positionx += $positionx;
         $this-> positiony += $positiony;
     }
 
-    public function moveposition($positionx, $positiony){
+    public function moveto($positionx, $positiony){
         $this-> positionx = $positionx;
         $this-> positiony = $positiony;
         }
-    
+    public function copyto(interfacepunto $punto){
+
+    }   
 
     public function getpositionx():int{
         return $this->positionx;
