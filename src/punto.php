@@ -75,7 +75,15 @@ class punto implements interfacepunto{
         return sqrt($positionx^2 + $positiony^2);
     }
 
-    public function isUpper()
+    public function isUpper(punto $punto){
+        [$puntopositionx, $puntopositiony] = $punto->getPosition();
+        return $this->positiony < $puntopositiony;
+    }
+
+    public function isUnder(punto $punto){
+        [$puntopositionx, $puntopositiony] = $punto->getPosition();
+        return $this->positiony > $puntopositiony;
+    }
 
     public function isLeft(punto $punto){
         [$puntopositionx, $puntopositiony] = $punto->getPosition();
