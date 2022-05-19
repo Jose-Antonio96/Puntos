@@ -19,21 +19,11 @@ class punto{
         $this-> positiony += $positiony;
     }
 
-    public function moveposition($positionx, $positiony, $posicion){
-        $movex = 0;
-        $movey = 0;
-        $posicion = [$positionx, $positiony];
-        $newposicion = [];
+    public function moveposition($positionx, $positiony){
         $this-> positionx = $positionx;
         $this-> positiony = $positiony;
-        for($positionx=0; $positionx<$movex; $positionx++){ 
-            for($positiony=0; $positiony<$movey; $positiony++){
-                $newposicion == $posicion[$positionx][$positiony] = $posicion[$positionx++][$positiony++];
-            }
-            return $newposicion;
         }
     
-    }
 
     public function getpositionx():int{
         return $this->positionx;
