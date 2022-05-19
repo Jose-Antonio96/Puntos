@@ -7,12 +7,12 @@
     },
     "autoload":{
         "psr-4":{ 
-            "ITEC\\DAW\\PROG\\punto\\": "src/"
+            "ITEC\\DAW\\PROG\\puntospoligono\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4":{
-            "ITEC\\DAW\\PROG\\punto\\": "src/"
+            "ITEC\\DAW\\PROG\\puntospoligono\\": "src/"
         }
     }
 }

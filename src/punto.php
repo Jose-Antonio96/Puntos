@@ -49,6 +49,11 @@ class punto implements interfacepunto{
         return [$this->positionx, $this->positiony];
     }
 
+    /**
+     * MoveToPoint: Mueve el punto a la posición del $p
+     * 
+     * $param punto $punto
+     */
     public function moveToPoint(punto $punto){
         [$positionx, $positiony] = $punto->getPosition(); 
         //Destructuracion de arrays. Lo asignamos asi para que cada elemento vaya a una variable
