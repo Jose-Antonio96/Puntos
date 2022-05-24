@@ -77,43 +77,106 @@ class punto implements interfacepunto{
 
     public function isUpper(punto $punto){
         [$puntopositionx, $puntopositiony] = $punto->getPosition();
-        return $this->positiony < $puntopositiony;
+        return $this->positiony < $puntopositiony && $this->positionx == $puntopositionx;
     }
-
-    public function isUnder(punto $punto){
+    /**
+     * isUpper, El punto $punto está justo encima de mí
+     *
+     * @param punto $punto
+     * @return boolean
+     * true si está justo encima
+     * falso si no
+     */
+    public function Bottom(punto $punto){
         [$puntopositionx, $puntopositiony] = $punto->getPosition();
-        return $this->positiony > $puntopositiony;
+        return $this->positiony > $puntopositiony && $this->positionx == $puntopositionx;
     }
+    /**
+     * Bottom, El punto $punto está justo debajo
+     *
+     * @param punto $punto
+     * @return boolean
+     * true si está justo debajo
+     * falso si no
+     */
 
     public function isLeft(punto $punto){
         [$puntopositionx, $puntopositiony] = $punto->getPosition();
-        return $this->positionx < $puntopositionx;
+        return $this->positionx > $puntopositionx && $this->positiony == $puntopositiony;
     }
+    /**
+     * isLeft, El punto $punto está justo a la izquierda
+     *
+     * @param punto $punto
+     * @return boolean
+     * true si está justo a la izquierda
+     * falso si no
+     */
 
     public function isRight(punto $punto){
         [$puntopositionx, $puntopositiony] = $punto->getPosition();
-        return $this->positionx > $puntopositionx;
+        return $this->positionx < $puntopositionx && $this->positiony == $puntopositiony;
     }
+    /**
+     * isRight, El punto $punto está justo a la derecha
+     *
+     * @param punto $punto
+     * @return boolean
+     * true si está justo a la derecha
+     * falso si no
+     */
+    
 
     public function isUpperLeft(punto $punto){
         [$puntopositionx, $puntopositiony] = $punto->getPosition();
-        return $this->positionx > $puntopositionx && $this-> positiony > $puntopositiony;
+        return $this->positionx > $puntopositionx && $this-> positiony < $puntopositiony;
     }
+    /**
+     * isUpperLeft, El punto $punto está justo arriba a la izquierda
+     *
+     * @param punto $punto
+     * @return boolean
+     * true si está justo arriba a la izquierda
+     * falso si no
+     */
 
     public function isUpperRight(punto $punto){
         [$puntopositionx, $puntopositiony] = $punto->getPosition();
-        return $this->positionx < $puntopositionx && $this-> positiony > $puntopositiony;
+        return $this->positionx < $puntopositionx && $this-> positiony < $puntopositiony;
     }
+    /**
+     * isUpperRight, El punto $punto está justo arriba a la derecha
+     *
+     * @param punto $punto
+     * @return boolean
+     * true si está justo arriba a la derecha
+     * falso si no
+     */
 
     public function isBottomLeft(punto $punto){
         [$puntopositionx, $puntopositiony] = $punto->getPosition();
-        return $this->positionx < $puntopositionx && $this-> positiony < $puntopositiony;
+        return $this->positionx > $puntopositionx && $this-> positiony > $puntopositiony;
     }
+    /**
+     * isBottomLeft, El punto $punto está justo abajo a la izquierda
+     *
+     * @param punto $punto
+     * @return boolean
+     * true si está justo abajo a la izquierda
+     * falso si no
+     */
 
     public function isBottomRight(punto $punto){
         [$puntopositionx, $puntopositiony] = $punto->getPosition();
-        return $this->positionx > $puntopositionx && $this-> positiony < $puntopositiony;
+        return $this->positionx < $puntopositionx && $this-> positiony > $puntopositiony;
     }
+    /**
+     * isBottomRight, El punto $punto está justo abajo a la derecha
+     *
+     * @param punto $punto
+     * @return boolean
+     * true si está justo abajo a la derecha
+     */
 }
 
 ?>

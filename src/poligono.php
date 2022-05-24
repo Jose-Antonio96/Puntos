@@ -17,7 +17,7 @@ abstract class poligono{
     protected int $numPuntos = 0;
     abstract public function calcularArea():float;
     abstract static function create(array $puntos);
-    abstract public function validateNewPoint():bool;
+    abstract public function validateNewPoint(punto $punto):bool;
     abstract public function getmaxpoints():int;
 
     public function getNumPoints():int{
@@ -25,7 +25,7 @@ abstract class poligono{
     }
     
     protected function addPoint(punto $punto){ //Esta clase solo puede ser heredada por sus hijos
-       if (!$this->validateNewPoint())
+       if (!$this->validateNewPoint($punto))
        throw new \Exception("No puedo añadir un nuevo punto: Max Points" . $this->getmaxpoints() );
        $this->puntos[] = $punto;
        $this->numPuntos++;
