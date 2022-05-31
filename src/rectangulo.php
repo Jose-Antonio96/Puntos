@@ -65,7 +65,7 @@ class rectangulo extends poligono{
         return count($this->puntos);
     }
 
-    public function calcularAreaRectangulo():
+    public function calcularAreaRectangulo:
 } 
 
 ?>

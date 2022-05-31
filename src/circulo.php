@@ -21,6 +21,8 @@ class circulo extends poligono{
         return $this->getNumPoints()==2;
     }
 
+    private static function validate()
+
 }
 
 ?>
