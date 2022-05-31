@@ -19,7 +19,10 @@ abstract class poligono{
     protected int $numPuntos = 0;
     abstract public function calcularArea():float;
     abstract static function create(array $puntos);
+
     abstract public function validateNewPoint(punto $punto):bool;
+    //Valida si ese polígono puede tener otro punto más
+
     abstract public function getmaxpoints():int;
 
     public function getNumPoints():int{
@@ -31,6 +34,7 @@ abstract class poligono{
        throw new \Exception("No puedo añadir un nuevo punto: Max Points" . $this->getmaxpoints() );
        $this->puntos[] = $punto;
     }
+    //Esta funcion no esta especificada como tal, sino que usa funciones propias de la clase, y luego el contenido de dichas funciones será definido en las clases derivadas. Ventaja sobre interface es que podemos definir tanto valores como funciones, aunque el contenido de las funciones sigue sin especificarse. Eso es trabajo de las clases derivadas
 }
 
 ?>

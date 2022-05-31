@@ -16,7 +16,7 @@ class punto implements interfacepunto{
     }
     //+= para ir sumandole y asi dar una nueva posicion. Mueve de forma absoluta
     /**
-     * Undocumented function
+     * Mueve la posición del punto de manera absoluta
      * 
      * @param array $dimension un array [x,y]
      * @return void
@@ -26,7 +26,7 @@ class punto implements interfacepunto{
         $this-> positiony += $dimension[1];
     }
     /**
-     * Undocumented function
+     * Mueve la posición del punto de manera relativa
      * 
      * @param array $dimension un array [x,y]
      * @return void

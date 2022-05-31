@@ -53,14 +53,33 @@ class cuadrado extends poligono{
     {
         if($this->getNumPoints()==0)
             return true;
-        elseif ($this->getNumPoints()==1)
+            //Si hay 1, este debe quedar a la izquierda del 2
+        if ($this->getNumPoints()==1)
             return $this->puntos[0]->isLeft($punto);
-        elseif ($this->getNumPoints()==2)
+        if ($this->getNumPoints()==2)
             return $this->puntos[1]->isUpper($punto);
-        elseif ($this->getNumPoints()==3)
+        if ($this->getNumPoints()==3)
             return $this->puntos[2]->isRight($punto) && $this->puntos[0]->isUpper($punto);
+        return false;
+        //Si el primero que entra es true, va comprobando de uno en uno, si es true, va añadiendo el punto, si es false, no lo añade
         
     }
+
+    public function getArea():float{
+        return $this->calcularArea();
+    }
+
+    public function calcularArea(): float
+    {
+        $lado1 = $this->puntos[0]->getDistance($this->puntos[1]);
+        return $lado1*$lado1;
+    }
+
+    public function getMaxPoints():int{
+        return count($this->puntos);
+    }
+
+
 
 }
 
