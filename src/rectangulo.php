@@ -1,8 +1,11 @@
 <?php
-namespace ITEC\DAW\PROG\classes\punto;
-use ITEC\DAW\PROG\classes\punto\poligono;
-use ITEC\DAW\PROG\classes\punto\punto;
+namespace ITEC\DAW\PROG\puntospoligono;
+use ITEC\DAW\PROG\puntospoligono\poligono;
+use ITEC\DAW\PROG\puntospoligono\punto;
+
 use Exception;
+
+
 class rectangulo extends poligono{
     private const MAXPOINTS = 4;
     /**
@@ -28,9 +31,10 @@ class rectangulo extends poligono{
     }
 
     private static function validate(array $puntos):bool{
-        if (count($puntos)!=CUADRADO::MAXPOINTS) return false;
+        if (count($puntos)!=rectangulo::MAXPOINTS) return false;
         if (!self::validarPosicionesRelativas($puntos)) return false;
         if (!self::validardistanciaEntrePuntos($puntos)) return false;
+        return true;
     }
 
     private static function validardistanciaEntrePuntos($puntos):bool{
@@ -50,14 +54,18 @@ class rectangulo extends poligono{
     }
 
     public function validateNewPoint(punto $punto):bool //Esto nos sirve para ir incluyendo los puntos de uno en uno
-    {
-        if($this->getNumPoints()==0)
-            return true;
-            //Si hay 1, este debe quedar a la izquierda del 2
-        if ($this->getNumPoints()==1)
+    {   
+        //Si el punto es 0, cualquiera retornado nos sirve
+        if($this->getNumPoints()==0) return true;
+        //si hay 1, este debe quedar a la izquierda del punto 2
+        if($this->getNumPoints()==1)
             return $this->puntos[0]->isLeft($punto);
-        if ($this->getNumPoints()==2)
+        //si hay 2,este debe quedar encima del punto 3
+        if($this->getNumPoints()==2)
             return $this->puntos[1]->isUpper($punto);
+        //si hay 3, este debe quedar a la derecha del numero 4 y el 4 debajo del punto 1
+        if($this->getNumPoints()==3)
+            return $this->puntos[2]->isRight($punto) && $this->puntos[0]->isUpper($punto);
         return false;
     }
 
@@ -65,7 +73,11 @@ class rectangulo extends poligono{
         return count($this->puntos);
     }
 
-    public function calcularAreaRectangulo:
+    public function calcularArea():float{
+        $lado1 = $this->puntos[0]->getDistance($this->puntos[1]);
+        $lado2 = $this->puntos[1]->getDistance($this->puntos[2]);
+        return $lado1*$lado2;
+    }
 } 
 
 ?>
