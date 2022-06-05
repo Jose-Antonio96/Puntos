@@ -13,25 +13,22 @@ class circulo extends poligono{
      * @param $array array
      */
     public function __construct(){
-        $this->puntos;
-    }
+        $this->puntos = [];
+        }
 
-    public function create(array $puntos){
+    public static function create(array $puntos){
         $circulo = new circulo($puntos);
         foreach($puntos as $punto){
             $circulo->addPoint($punto);
         }
         if (!self::validate($puntos)){
             throw new Exception("Esto no es un circulo");
+        return $circulo;
         }
     }
 
     public function getMaxPoints():int{
         return count($this->puntos);
-    }
-
-    public function getArea(){
-        return pi()*($this->punto(0)->getDistance($this->punto(1)))*2;
     }
 
     public function validateNewPoint(punto $punto):bool{
@@ -42,9 +39,12 @@ class circulo extends poligono{
         return count($puntos) == circulo::MAXPOINTS;
     }
 
-    public function calcularArea(): float
-    {
-        return pi()*($this->punto(0)->getDistance($this->punto(1)))*2;
+    public function calcularArea(): float{
+        return pi()*($this->puntos[0]->getDistance($this->puntos[1]))*2;
+    }
+
+    public function getArea():float{
+        return $this->calcularArea();
     }
 
 }
