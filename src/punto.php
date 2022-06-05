@@ -177,6 +177,7 @@ class punto implements interfacepunto{
      * @return boolean
      * true si está justo abajo a la derecha
      */
+
 }
 
 ?>

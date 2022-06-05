@@ -1,6 +1,7 @@
 <?php
 namespace ITEC\DAW\PROG\puntospoligono;
 use ITEC\DAW\PROG\puntospoligono\poligono;
+use ITEC\DAW\PROG\puntospoligono\punto;
 use Exception;
 
 
